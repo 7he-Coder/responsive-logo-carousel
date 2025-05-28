@@ -31,8 +31,8 @@ Embed the slider into your HTML:
 
 <div class="logo-slider">
   <div class="slide-track">
-    <div class="slide"><img src="logo1.png" alt="Logo 1" /></div>
-    <div class="slide"><img src="logo2.png" alt="Logo 2" /></div>
+    <div class="slide"><img src="https://images.ctfassets.net/y2ske730sjqp/wXQuYIpMOFBkAKGgTJmBu/1708a448bbd1c0b48e7a44a6485788c4/BrandAssets_Logos_03-ClearSpace_02.jpg?w=460" alt="Logo 1" /></div>
+    <div class="slide"><img src="https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Full_Logo_RGB_Green.png" alt="Logo 2" /></div>
     <!-- Add more logos as needed -->
   </div>
 </div>

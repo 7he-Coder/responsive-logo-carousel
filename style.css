@@ -11,21 +11,89 @@ html {
 body {
 	font-family: "Roboto", sans-serif;
 }
+
+h1 {
+	font-size: 1.5rem;
+	padding-block: 1rem;
+	color: #fff;
+	background: #000;
+	text-align: center;
+}
+
 .container-wrapper {
-	margin-top: 5rem;
+	margin-block: 2rem;
+	position: relative;
+}
+.logo-slider::before,
+.logo-slider::after {
+	position: absolute;
+	top: 0;
+	content: "";
+	width: 250px;
+	height: 100%;
+	z-index: 2;
+}
+.logo-slider::before {
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	left: 0;
+}
+.logo-slider::after {
+	background: linear-gradient(
+		270deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	right: 0;
 }
 .logo-slider {
 	overflow: hidden;
+	white-space: nowrap;
+	cursor: pointer;
+	background: #ffffff;
+	filter: drop-shadow(0px 0px 12px #eeeeee);
 }
+.logo-slider:hover .logos {
+	animation-play-state: paused;
+}
+
 .logos {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	display: inline-block;
+	animation: loopSlider 25s linear infinite;
+}
+@keyframes loopSlider {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
+	}
 }
 
 img {
 	width: 10%;
+	aspect-ratio: 3 / 2;
 	object-fit: contain;
-	aspect-ratio: 3/2;
-	margin-inline: 2.5rem;
+	padding: 0 2.5rem;
+	margin: 0 0.6rem;
+}
+
+@media screen and (max-width: 480px) {
+	.logos {
+		background: #fafff3;
+	}
+	.logo-slider::before,
+	.logo-slider::after {
+		width: 75px;
+	}
+
+	img {
+		width: 15%;
+		/* margin: 0 1.5rem; */
+		margin: 0 0.5rem;
+		padding: 0rem;
+	}
 }
